@@ -1,0 +1,21 @@
+<mat-card>
+  <mat-card-content>
+    <p>Name: {{ data.name }}</p>
+    <p>Due Date: {{ data.dueDate | date }}</p>
+    <p>Priority: {{ data.priority }}</p>
+    <p>ListId: {{ data.listId }}</p>
+    <p>Description</p>
+    <p>{{ data.description }}</p>
+
+    <p>Activities:</p>
+    <mat-list>
+      <mat-list-item *ngFor="let activity of relatedActivities">
+        <span matListItemTitle>{{ activity.change }}</span>
+        <span matListItemLine>{{ activity.timestamp | date : "medium" }}</span>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button (click)="close()">Close</button>
+  </mat-card-actions>
+</mat-card>

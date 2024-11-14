@@ -1,0 +1,30 @@
+<div>
+  <h2>Календарь на {{ year }}-{{ month + 1 }}</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Пн</th>
+        <th>Вт</th>
+        <th>Ср</th>
+        <th>Чт</th>
+        <th>Пт</th>
+        <th>Сб</th>
+        <th>Вс</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let week of getWeeks()">
+        <td *ngFor="let day of week">
+          <div *ngIf="day">
+            <span>{{ day }}</span>
+            <ul>
+              <li *ngFor="let task of getTasksByDate(day)">
+                {{ task.name }}
+              </li>
+            </ul>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

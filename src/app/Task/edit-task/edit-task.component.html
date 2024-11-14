@@ -1,0 +1,44 @@
+<mat-dialog-content>
+  <h2>Edit task</h2>
+  <form [formGroup]="editTaskForm" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Task name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>List</mat-label>
+      <mat-select formControlName="listId">
+        <mat-option *ngFor="let list of taskLists" [value]="list.id">{{
+          list.name
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Due date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="dueDate" />
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <mat-select formControlName="priority">
+        <mat-option *ngFor="let priority of priorities" [value]="priority">{{
+          priority
+        }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <button mat-button type="submit" [disabled]="editTaskForm.invalid">
+      Save
+    </button>
+    <button mat-button mat-dialog-close>Cancel</button>
+  </form>
+</mat-dialog-content>

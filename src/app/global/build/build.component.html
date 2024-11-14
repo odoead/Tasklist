@@ -1,0 +1,21 @@
+<div class="task-board">
+  <div class="board-header">
+    <h1>My Task Board</h1>
+    <button mat-raised-button color="primary" (click)="addNewList()">
+      <mat-icon>add</mat-icon> Add New List
+    </button>
+  </div>
+
+  <div class="lists-container">
+    <app-task-list
+      *ngFor="let list of taskLists"
+      [list]="list"
+      [allLists]="taskLists"
+      (editList)="onEditList($event)"
+      (deleteList)="onDeleteList($event)"
+    >
+    </app-task-list>
+  </div>
+</div>
+
+

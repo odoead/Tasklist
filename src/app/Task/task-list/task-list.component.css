@@ -1,0 +1,58 @@
+:host {
+    display: block; flex-direction: column;
+    min-width: 300px;
+    background-color: #ebecf0;
+    border-radius: 8px;
+    padding: 10px;
+    max-height: 100%;
+    overflow-y: auto;
+  }
+  
+  .mat-card {
+    box-shadow: none !important;
+    background-color: transparent !important; display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .mat-card-header {
+    margin-bottom: 10px; flex-shrink: 0;
+  }
+  
+  .mat-card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .mat-card-subtitle {
+    font-size: 14px;
+    color: #5e6c84;
+  }
+  
+  .mat-raised-button {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .mat-card-content {
+    overflow-y: auto;
+    flex-grow: 1;
+    min-height: 0; /* This is crucial for nested flexbox scrolling */
+  }
+  @media (max-width: 768px) {
+    :host {
+      min-width: auto;
+      max-width: none;
+            width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+.task-list
+{
+  height: 100hv;
+  display: flex;
+  flex-direction: column;
+}
+.app-task-card
+{
+  
+}

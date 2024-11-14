@@ -1,0 +1,25 @@
+/* edit-task.component.css */
+:host {
+    display: block;
+    padding: 20px;
+  }
+  
+  h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 20px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  button[type="submit"] {
+    align-self: flex-end;
+  }

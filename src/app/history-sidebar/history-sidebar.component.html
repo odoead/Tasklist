@@ -1,0 +1,27 @@
+<mat-sidenav-container class="history-container">
+  <mat-sidenav #sidenav mode="side" [opened]="isOpen">
+    <mat-toolbar>
+      <span>History</span>
+      <span class="spacer"></span>
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="history-content">
+      <mat-nav-list>
+        <mat-list-item *ngFor="let activity of activities">
+          <span matListItemTitle>{{ activity.change }}</span>
+          <span matListItemLine>Task ID: {{ activity.taskId }}</span>
+          <span matListItemLine>{{ activity.timestamp | date : "medium" }}</span>
+        </mat-list-item>
+      </mat-nav-list>
+      <div class="show-more-button">
+        <button mat-button (click)="loadMore()">Show more</button>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-button (click)="sidenav.toggle()">Toggle History</button>
+    <app-build></app-build>
+  </mat-sidenav-content>
+</mat-sidenav-container>

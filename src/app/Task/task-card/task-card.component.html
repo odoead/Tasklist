@@ -1,0 +1,36 @@
+<mat-card (click)="onCardClick()">
+  <mat-card-header>
+    <mat-card-title>{{ task.name }}</mat-card-title>
+    <mat-card-subtitle>{{ task.description }}</mat-card-subtitle>
+    <button mat-icon-button [matMenuTriggerFor]="cardMenu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #cardMenu="matMenu">
+      <button mat-menu-item (click)="onEditTask()">
+        <mat-icon>edit</mat-icon>
+        <span>Edit</span>
+      </button>
+      <button mat-menu-item (click)="onDeleteTask(task!.id)">
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+    </mat-menu>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Due Date: {{ task.dueDate | date }}</p>
+    <p>Priority: {{ task.priority }}</p>
+  </mat-card-content>
+  <mat-card-actions>
+    <mat-form-field (click)="$event.stopPropagation()">
+      <mat-label>Move to</mat-label>
+      <mat-select
+        (selectionChange)="onMoveTask($event.value)"
+        [value]="task.listId"
+      >
+        <mat-option *ngFor="let list of taskLists" [value]="list.id">
+          {{ list.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </mat-card-actions>
+</mat-card>

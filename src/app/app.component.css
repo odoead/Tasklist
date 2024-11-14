@@ -1,0 +1,46 @@
+:host {
+    display: block;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .task-board {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .board-header {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+  }
+  
+  h1 {
+    font-size: 24px;
+    margin: 0;
+  }
+  
+  .lists-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    padding-bottom: 20px;
+    flex-grow: 1;
+    min-height: 0; /* This is crucial for nested flexbox scrolling */
+  }
+  
+  @media (max-width: 768px) {
+    .lists-container {
+      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+  }
