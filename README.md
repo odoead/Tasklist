@@ -1,4 +1,10 @@
 # Tasklist
+ Task list project created using Angular and Material. Stores project data in browser storage.
+# IMG
+
+![tasklist3](https://github.com/user-attachments/assets/dd30c93f-d7f5-444e-8588-7485bacc7590)
+![tasklist1](https://github.com/user-attachments/assets/c81ae8e2-2dfe-4383-b42b-8a744da4cd93)
+![tasklist2](https://github.com/user-attachments/assets/9f597b17-e109-4f34-bfae-8709b13a2dd7)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.6.
 
